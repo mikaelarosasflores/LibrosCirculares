@@ -6,7 +6,7 @@ export declare class GenreController {
     constructor(genreService: GenreService);
     create(createGenreDto: CreateGenreDto): number;
     findAll(): import("./entities/genre.entity").Genre[];
-    findOne(id: string): string;
-    update(id: string, updateGenreDto: UpdateGenreDto): string;
+    findOne(id: string): import("./entities/genre.entity").Genre | undefined;
+    update(id: string, updateGenreDto: UpdateGenreDto): typeof import("@nestjs/common", { with: { "resolution-mode": "import" } }).NotFoundException | undefined;
     remove(id: string): boolean;
 }

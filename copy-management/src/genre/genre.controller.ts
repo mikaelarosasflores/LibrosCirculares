@@ -17,10 +17,12 @@ export class GenreController {
 
   @Post()
   create(@Body() createGenreDto: CreateGenreDto) {
+    
     return this.genreService.create(createGenreDto);
   }
 
   @Get()
+  findAll(){
     return this.genreService.findAll();
   }
 

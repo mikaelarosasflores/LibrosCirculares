@@ -1,9 +1,12 @@
+import { NotFoundException } from '@nestjs/common';
 import { CreateAuthorDto } from './dto/create-author.dto';
 import { UpdateAuthorDto } from './dto/update-author.dto';
+import { Author } from './entities/author.entity';
 export declare class AuthorService {
-    create(createAuthorDto: CreateAuthorDto): string;
-    findAll(): string;
-    findOne(id: number): string;
-    update(id: number, updateAuthorDto: UpdateAuthorDto): string;
-    remove(id: number): string;
+    authors: Author[];
+    create(createAuthorDto: CreateAuthorDto): number;
+    findAll(): Author[];
+    findOne(id: number): Author | undefined;
+    update(id: number, updateAuthorDto: UpdateAuthorDto): typeof NotFoundException | undefined;
+    remove(id: number): boolean;
 }
