@@ -1,0 +1,27 @@
+@startuml
+
+class Persona {
+    nombre: String
+    apellido: String
+    dni: Integer
+    edad: Number
+    contacto: Persona
+    medioContacto : List<MedioContacto>
+}
+
+class MedioContacto {
+    tipo: String
+    valor: String
+    esPreferido: Boolean
+}
+
+class Comunidad {
+    nombre: String
+    listaPersonas: List<Persona>
+}
+
+Comunidad --> Persona
+Persona --> Persona
+Persona --> MedioContacto
+
+@enduml
